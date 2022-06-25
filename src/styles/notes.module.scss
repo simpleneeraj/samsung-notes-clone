@@ -1,0 +1,25 @@
+.container {
+  display: flex;
+  flex-direction: column;
+
+  gap: 1rem;
+  overflow: hidden;
+}
+.top {
+  padding: 1rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  overflow: auto;
+  padding: 1rem;
+}
+
+.items {
+  border-radius: 15px;
+  padding: 0.5rem; // 8 px
+  min-height: 150px;
+  background: var(--secondry-background);
+}

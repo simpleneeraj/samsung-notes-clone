@@ -9,11 +9,21 @@ const SideBar = () => {
         <h4>{sideTabState.tabName}</h4>
       </div>
       <div className={css.controls}>
-        {tabData.map((data, index) => (
-          <button key={index} onClick={() => tabHandler(data.name)}>
-            {data.name}
-          </button>
-        ))}
+        {tabData.map((data, index) => {
+          const check = sideTabState.tabName === data.name;
+          const buttonStyle = {
+            background: check ? "#2196f3" : "",
+          };
+          return (
+            <button
+              style={buttonStyle}
+              key={index}
+              onClick={() => tabHandler(data.name)}
+            >
+              {data.name}
+            </button>
+          );
+        })}
       </div>
     </div>
   );
@@ -23,19 +33,19 @@ export default SideBar;
 
 const tabData = [
   {
-    name: "All Notes"
+    name: "All Notes",
     // icon:<SVGICon/>
   },
   {
-    name: "Favorites"
+    name: "Favorites",
     // icon:<SVGICon/>
   },
   {
-    name: "Locked"
+    name: "Locked",
     // icon:<SVGICon/>
   },
   {
-    name: "Tabs"
+    name: "Tabs",
     // icon:<SVGICon/>
-  }
+  },
 ];

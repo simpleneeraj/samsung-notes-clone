@@ -1,4 +1,8 @@
 import React from "react";
+import Tabs from "./Tabs";
+import Locked from "./Locked";
+import AllNotes from "./allNotes";
+import Favorites from "./Favorites";
 import useSideBar from "store/hooks/useSideBar";
 
 const MainBar = () => {
@@ -6,31 +10,13 @@ const MainBar = () => {
   // return <div>MainBar</div>;
   switch (sideTabState.tabName) {
     case "All Notes":
-      return (
-        <React.Fragment>
-          <p>
-            This is Render <strong>{sideTabState.tabName}</strong>
-          </p>
-        </React.Fragment>
-      );
+      return <AllNotes />;
     case "Favorites":
-      return (
-        <p>
-          This is Render <strong>{sideTabState.tabName}</strong>
-        </p>
-      );
+      return <Favorites />;
     case "Locked":
-      return (
-        <p>
-          This is Render <strong>{sideTabState.tabName}</strong>
-        </p>
-      );
+      return <Locked />;
     case "Tabs":
-      return (
-        <p>
-          This is Render <strong>{sideTabState.tabName}</strong>
-        </p>
-      );
+      return <Tabs />;
     default:
       return null;
   }
