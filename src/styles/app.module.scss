@@ -1,0 +1,28 @@
+.app {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 30% 1fr;
+}
+
+.side {
+  background-color: #eee;
+  display: flex;
+  flex-direction: column;
+  padding: 4px;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  h1 {
+    font: 1rem;
+  }
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  button {
+    flex: 1;
+  }
+}
