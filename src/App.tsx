@@ -4,16 +4,23 @@ import css from "styles/app.module.scss";
 import StickyButton from "components/sticky";
 import ModelContainer from "components/Model";
 import Form from "components/form";
+import useModel from "store/hooks/useModel";
 
 function App() {
+  const { modelHandler, modelState } = useModel();
   return (
     <div className={css.app}>
       <SideBar />
       <MainBar />
-      <ModelContainer isOpen={true}>
-        <Form />
+      <ModelContainer isOpen={modelState === "formModel"}>
+        <Form
+          onSubmit={function (): void {
+            throw new Error("Function not implemented.");
+          }}
+          onClose={() => modelHandler("")}
+        />
       </ModelContainer>
-      <StickyButton />
+      <StickyButton onClickModel={() => modelHandler("formModel")} />
     </div>
   );
 }

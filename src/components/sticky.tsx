@@ -1,9 +1,15 @@
 import React from "react";
 
-const StickyButton = () => {
+interface StickyButtonProps extends React.ComponentPropsWithoutRef<"button"> {
+  onClickModel: () => void;
+}
+
+const StickyButton = (props: StickyButtonProps) => {
   return (
     <div className="sticky">
-      <button className="addNew">Add New</button>
+      <button onClick={props.onClickModel} className="addNew" {...props}>
+        Add New
+      </button>
       {/* @ts-ignore */}
       <style jsx>
         {`
