@@ -8,11 +8,14 @@ import useModel from "store/hooks/useModel";
 
 function App() {
   const { modelHandler, modelState } = useModel();
+
+  const isForm = modelState === "formModel";
+  console.log(modelState);
   return (
     <div className={css.app}>
       <SideBar />
       <MainBar />
-      <ModelContainer isOpen={modelState === "formModel"}>
+      <ModelContainer isOpen={isForm}>
         <Form
           onSubmit={function (): void {
             throw new Error("Function not implemented.");
