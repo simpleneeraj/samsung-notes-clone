@@ -11,17 +11,14 @@ function App() {
 
   const isForm = modelState === "formModel";
   console.log(modelState);
+
+  // console.log("RTK", data);
   return (
     <div className={css.app}>
       <SideBar />
       <MainBar />
       <ModelContainer isOpen={isForm}>
-        <Form
-          onSubmit={function (): void {
-            throw new Error("Function not implemented.");
-          }}
-          onClose={() => modelHandler("")}
-        />
+        <Form onSubmit={() => {}} onClose={() => modelHandler("")} />
       </ModelContainer>
       <StickyButton onClickModel={() => modelHandler("formModel")} />
     </div>

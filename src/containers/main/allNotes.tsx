@@ -6,12 +6,24 @@ import delay from "utils/delay";
 const AllNotes = () => {
   const { notesArray, deleteNote } = useNotes();
 
-  const cH = (id: any) => {
+  const deleteHandler = (id: any) => {
     console.log(id);
     delay(800).then(() => {
       deleteNote(id);
     });
   };
+
+  // React.useEffect(() => {
+  //   fetch(`https://jsonplaceholder.typicode.com/todos`)
+  //     .then((data) => data.json())
+  //     .then((todo) => {
+  //       console.log(todo);
+  //     })
+  //     .catch((e) => {
+  //       console.log(e);
+  //     });
+  // }, []);
+
   return (
     <div className={css.container}>
       <div className={css.top}>
@@ -23,7 +35,7 @@ const AllNotes = () => {
         ) : (
           notesArray.slice(0, 10).map((data, index) => (
             <Item
-              onDelete={() => cH(data.id)}
+              onDelete={() => deleteHandler(data.id)}
               key={index}
               // id={data.id}
               // notesContent={data.notesContent}

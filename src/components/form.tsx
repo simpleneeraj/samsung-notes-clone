@@ -11,16 +11,6 @@ interface FormProps {
 const Form = (props: FormProps) => {
   const { onClose, onSubmit } = props;
 
-  // const dispatch = useDispatch();
-  // const formState = useSelector((state: RootState) => state.form);
-
-  // const onChangeTitle = React.useCallback(
-  //   (str: string) => {
-  //     dispatch(formSlice.actions.setNotesTitle(str));
-  //   },
-  //   [dispatch]
-  // );
-
   const { formState, onChangeTitle, onChangeContent, setCreatedDate } =
     useForm();
   // React.useMemo
@@ -29,13 +19,6 @@ const Form = (props: FormProps) => {
   const onSubmitX = React.useCallback(() => {
     createNotes(formState);
   }, [createNotes, formState]);
-
-  // const onSubmitX = () => {
-  //   createNotes(formState);
-  //   // delay(2000).then(() => {
-  //   //   onClose();
-  //   // });
-  // };
 
   console.log(notesArray);
   return (
@@ -62,3 +45,18 @@ const Form = (props: FormProps) => {
   );
 };
 export default Form;
+// const dispatch = useDispatch();
+// const formState = useSelector((state: RootState) => state.form);
+
+// const onChangeTitle = React.useCallback(
+//   (str: string) => {
+//     dispatch(formSlice.actions.setNotesTitle(str));
+//   },
+//   [dispatch]
+// );
+// const onSubmitX = () => {
+//   createNotes(formState);
+//   // delay(2000).then(() => {
+//   //   onClose();
+//   // });
+// };
